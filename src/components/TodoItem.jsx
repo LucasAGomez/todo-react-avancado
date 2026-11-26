@@ -1,20 +1,17 @@
 import { memo } from 'react';
-import { useTodo } from '../context/TodoContext';
 
-export const TodoItem = memo(function TodoItem({ tarefa }) {
-  const { alternarTarefa, removerTarefa } = useTodo();
-
+export const TodoItem = memo(function TodoItem({ tarefa, onAlternar, onRemover }) {
   return (
     <li className="tarefa">
       <input
         type="checkbox"
         checked={tarefa.concluida}
-        onChange={() => alternarTarefa(tarefa.id)}
+        onChange={() => onAlternar(tarefa.id)}
       />
       <span className={tarefa.concluida ? 'concluida' : ''}>
         {tarefa.texto}
       </span>
-      <button onClick={() => removerTarefa(tarefa.id)}>Remover</button>
+      <button onClick={() => onRemover(tarefa.id)}>Remover</button>
     </li>
   );
 });

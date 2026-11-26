@@ -10,7 +10,7 @@ Lista de tarefas com React avançado: Context API, hook customizado e memoizatio
 - CSS Mobile First
 
 ## Como rodar
-git clone https://github.com/SEU-USUARIO/todo-react-avancado.git
+git clone https://github.com/LucasAGomez/todo-react-avancado
 cd todo-react-avancado
 npm install
 npm run dev
