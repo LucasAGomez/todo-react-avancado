@@ -1,16 +1,17 @@
-import { useTodo } from '../context/TodoContext';
-import { TodoItem } from './TodoItem';
+import { useTodo } from "../../context/TodoContext";
+import { TodoItem } from "../TodoItem";
+import { Lista, MensagemVazio } from "./styles";
 
 export function TodoList() {
   const { tarefas, alternarTarefa, removerTarefa } = useTodo();
 
   if (tarefas.length === 0) {
-    return <p className="vazio">Nenhuma tarefa ainda.</p>
+    return <MensagemVazio>Nenhuma tarefa ainda.</MensagemVazio>;
   }
 
   return (
-    <ul className="lista">
-      {tarefas.map(tarefa => (
+    <Lista>
+      {tarefas.map((tarefa) => (
         <TodoItem
           key={tarefa.id}
           tarefa={tarefa}
@@ -18,6 +19,6 @@ export function TodoList() {
           onRemover={removerTarefa}
         />
       ))}
-    </ul>
+    </Lista>
   );
 }
